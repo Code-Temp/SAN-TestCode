@@ -16,3 +16,8 @@ CUDA_VISIBLE_DEVICES=0,1,2 python main.py --config=configs/train_abinet.yaml --p
 
 scene-Vision:
 CUDA_VISIBLE_DEVICES=0,1 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/atop-Vision-SAN-scene-final/best-pretrain-vision-model.pth --test_root=data/scene/scene_val/ --model_eval=vision --image_only
+
+
+
+
+
