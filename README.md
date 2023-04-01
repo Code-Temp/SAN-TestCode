@@ -12,6 +12,8 @@ SAN code for test
 
 Web datatet:
 
+Radical length : 33
+
 - ABINet-TreeSim(SAN):
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/train_abinet.yaml --phase test --checkpoint=workdir/SAN-web-final/best-train-abinet.pth --test_root=data/web/web_val/ --model_eval=alignment --image_only
@@ -23,6 +25,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_mod
 ```
 
 Scene dataset:
+
+Radical length : 39
 
 - ABINet-TreeSim(SAN):
 ```
