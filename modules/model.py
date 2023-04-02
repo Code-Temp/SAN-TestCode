@@ -38,9 +38,9 @@ class Model(nn.Module):
             self.max_length_radical = config.dataset_max_length_radical + 1
             self.charset_radical = CharsetMapper(config.dataset_charset_path_radical, max_length=self.max_length_radical)
             
-            # max_length与max_length_radical相同
+            
             self.max_length = config.dataset_max_length_radical + 1  
-            # charset与charset_radical相同
+            
             self.charset = CharsetMapper(config.dataset_charset_path_radical, max_length=self.max_length_radical) 
     
     def load(self, source, device=None, strict=True):

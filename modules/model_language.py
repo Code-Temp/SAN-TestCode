@@ -47,25 +47,25 @@ class BCNLanguage(Model):
         
         #print("tokens:",tokens.size())
         
-        if self.detach: tokens = tokens.detach()        # tokens:[24, 26, 7935]  
-                                                        # 24是样本个数，整体train的时候batch size为96；26是最大长度；7935是字符类数
-        embed = self.proj(tokens)       # (N, T, E)     # embed:[24, 26, 512]    # embedding词嵌入编码
+        if self.detach: tokens = tokens.detach()         
+                                                        
+        embed = self.proj(tokens)         
         
-        embed = embed.permute(1, 0, 2)  # (T, N, E)     # embed:[26, 24, 512]
-        embed = self.token_encoder(embed)  # (T, N, E)  # 加上位置编码 embed:[26, 24, 512]
-        padding_mask = self._get_padding_mask(lengths, self.max_length)    #lengths:[24] padding_mask:[24, 26]
+        embed = embed.permute(1, 0, 2)    
+        embed = self.token_encoder(embed) 
+        padding_mask = self._get_padding_mask(lengths, self.max_length)   
 
         zeros = embed.new_zeros(*embed.shape)
         qeury = self.pos_encoder(zeros)
-        location_mask = self._get_location_mask(self.max_length, tokens.device)    #创建对角矩阵的mask[26, 26]，对角线上均为-inf
+        location_mask = self._get_location_mask(self.max_length, tokens.device)   
         
         output = self.model(qeury, embed,              # TransformerDecoder
                 tgt_key_padding_mask=padding_mask,
                 memory_mask=location_mask,
-                memory_key_padding_mask=padding_mask)  # (T, N, E)   # output:[26, 24, 512]
-        output = output.permute(1, 0, 2)               # (N, T, E)   # output:[24, 26, 512]
-        logits = self.cls(output)       # (N, T, C)    # logits=[24, 26, 7935]
-        pt_lengths = self._get_length(logits)          # pt_lengths=[24]
+                memory_key_padding_mask=padding_mask)  
+        output = output.permute(1, 0, 2)              
+        logits = self.cls(output)      
+        pt_lengths = self._get_length(logits)          
 
         res =  {'feature': output, 'logits': logits, 'pt_lengths': pt_lengths,
                 'loss_weight':self.loss_weight, 'name': 'language'}
