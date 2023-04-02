@@ -7,6 +7,10 @@ SAN code for test
     pip install -r requirements.txt
     ```
 
+## Model Result
+
+Get the model training result from [WeiYun (passwd:zmcvf4)](https://share.weiyun.com/k7DUruUp).
+
 
 ## Evaluation
 
