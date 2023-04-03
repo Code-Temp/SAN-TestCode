@@ -13,7 +13,7 @@ Test datasets can be downloaded from [Web_test and Scene_test WeiYun (passwd: fu
 
 ## Model Result
 
-Get the model training result from [WeiYun (passwd: zmcvf4)](https://share.weiyun.com/k7DUruUp).
+Get the model training result from [Model Result WeiYun (passwd: zmcvf4)](https://share.weiyun.com/k7DUruUp).
 
 
 ## Evaluation
