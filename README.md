@@ -7,9 +7,13 @@ SAN code for test
     pip install -r requirements.txt
     ```
 
+## Test Datasets
+
+Test datasets can be downloaded from [Web_test and Scene_test WeiYun (passwd: funf3i)](https://share.weiyun.com/MnIrRgo4).
+
 ## Model Result
 
-Get the model training result from [WeiYun (passwd:zmcvf4)](https://share.weiyun.com/k7DUruUp).
+Get the model training result from [WeiYun (passwd: zmcvf4)](https://share.weiyun.com/k7DUruUp).
 
 
 ## Evaluation
