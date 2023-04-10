@@ -32,6 +32,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/train_abinet.yaml -
 CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/Vision-web-final/best-pretrain-vision-model.pth --test_root=data/web/web_val/ --model_eval=vision --image_only
 ```
 
+&nbsp;
+
 Scene dataset:
 
 Radical length : 39
@@ -45,3 +47,15 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/train_abinet.yaml -
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/Vision-scene-final/best-pretrain-vision-model.pth --test_root=data/scene/scene_val/ --model_eval=vision --image_only
 ```
+
+## Notice
+
+The code I provided can be directly tested on the Web dataset. If you would like to test it on the Scene dataset, you need to modify the 'max_radical_length' parameter in the code. 
+
+Specifically, please make changes in the following two parts of the code:
+
+- ./configs/template.yaml line 22
+  ```max_length_radical: 33 -> max_length_radical: 39```
+
+- ./dataset.py line 221
+  ```max_length:int=33 -> max_length:int=39 ```
