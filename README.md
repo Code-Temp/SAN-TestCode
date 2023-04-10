@@ -50,12 +50,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_mod
 
 ## Notice
 
-The code I provided can be directly tested on the Web dataset. If you would like to test it on the Scene dataset, you need to modify the 'max_radical_length' parameter in the code. 
+The code I provided can be directly tested on the ```Web dataset```. If you would like to test it on the ```Scene dataset```, you need to modify the 'max_radical_length' parameter in the code. 
 
 Specifically, please make changes in the following two parts of the code:
 
-- ./configs/template.yaml line 22
+- ./configs/template.yaml <u>line 22</u>:
+  
   ```max_length_radical: 33 -> max_length_radical: 39```
 
-- ./dataset.py line 221
+- ./dataset.py <u>line 221</u>:
+  
   ```max_length:int=33 -> max_length:int=39 ```
