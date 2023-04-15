@@ -46,14 +46,14 @@ model:
   ensemble: ''
   use_vision: False
   vision: {
-    checkpoint: workdir/atop-Vision-SAN-web-final/best-pretrain-vision-model.pth,
+    checkpoint: workdir/VisionTreeSim-web-final/best-pretrain-vision-model.pth,
     loss_weight: 1.,
     attention: 'position',
     backbone: 'transformer',
     backbone_ln: 3,
   }
   language: {
-    checkpoint:  workdir/atop-language-web/best-pretrain-language-model.pth,
+    checkpoint:  workdir/language-web/best-pretrain-language-model.pth,
     num_layers: 4,
     loss_weight: 1.,
     detach: True,
