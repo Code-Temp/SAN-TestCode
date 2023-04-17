@@ -32,7 +32,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/train_abinet.yaml -
 
 - VM-TreeSim:
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/Vision-web-final/best-pretrain-vision-model.pth --test_root=data/web/web_val/ --model_eval=vision --image_only
+CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/VisionTreeSim-web-final/best-pretrain-vision-model.pth --test_root=data/web/web_val/ --model_eval=vision --image_only
 ```
 
 &nbsp;
@@ -48,7 +48,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/train_abinet.yaml -
 
 - VM-TreeSim:
 ```
-CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/Vision-scene-final/best-pretrain-vision-model.pth --test_root=data/scene/scene_val/ --model_eval=vision --image_only
+CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --config=configs/pretrain_vision_model.yaml --phase test --checkpoint=workdir/VisionTreeSim-scene-final/best-pretrain-vision-model.pth --test_root=data/scene/scene_val/ --model_eval=vision --image_only
 ```
 
 ## Notice
